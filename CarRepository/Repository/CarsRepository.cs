@@ -22,7 +22,6 @@ namespace DataAccessLayer.Repository
         public IEnumerable<Car> GetCars()
         {
             var cars = _ctx.Cars.ToList();
-            var details = cars.Select(x => x.Parts).ToList();
             return cars;
         }
 

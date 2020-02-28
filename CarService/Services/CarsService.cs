@@ -39,7 +39,7 @@ namespace BusinessLogicLayer.Services
                     Name = u.Name,
                     Price = u.Price
                 }).ToList()
-            });
+            }).ToList();
 
             return carsModels;
         }
