@@ -7,8 +7,6 @@ namespace DataAccessLayer.Repository
 {
     public class CarsRepository : ICarsRepository
     {
-        //private static readonly string connectionString = @"Initial Catalog=AutoDB;Integrated Security=True";
-
         private readonly CarContext _ctx;
         public CarsRepository()
         {
@@ -39,10 +37,7 @@ namespace DataAccessLayer.Repository
         {
             var findcar = _ctx.Cars.Find(car.Id);
             findcar.Name = car.Name;
-            //findcar.Parts = car.Parts;
             _ctx.SaveChanges();
-
-            //сначала получаешь её из базы, затем изменяешь её , и сохраняешь
         }
 
         public Car GetById(int id)

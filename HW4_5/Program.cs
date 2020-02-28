@@ -19,7 +19,7 @@ namespace Lesson4_4
 
 
             
-            carsController.GetById(1);
+            var hz = detailController.GetById(1);
 
             //var carViewModel = new CarViewModel()
             //{

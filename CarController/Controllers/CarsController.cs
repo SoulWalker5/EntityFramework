@@ -16,9 +16,7 @@ namespace PresentationLayer.Controllers
         {
             CarModel carModel = new CarModel
             {
-                //Id = carViewModel.Id,
                 Name = carViewModel.Name
-
             };
             service.Create(carModel);
         }
@@ -36,7 +34,13 @@ namespace PresentationLayer.Controllers
             {
                 Id = carModel.Id,
                 Name = carModel.Name,
-                //Parts = 
+                Parts = carModel.Parts.Select(u => new DetailViewModel
+                {
+                    Id = u.Id,
+                    CarId = u.CarId,
+                    Name = u.Name,
+                    Price = u.Price
+                }).ToList()
             };
             return carViewModel;
         }
@@ -64,7 +68,6 @@ namespace PresentationLayer.Controllers
             {
                 Id = carViewModel.Id,
                 Name = carViewModel.Name
-
             };
             service.Update(carModel);
         }

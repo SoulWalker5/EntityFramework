@@ -60,11 +60,9 @@ namespace PresentationLayer.Controllers
         {
             DetailModel detailModel = new DetailModel
             {
-                //Id = detailViewModel.Id,
                 CarId = detailViewModel.CarId,
                 Name = detailViewModel.Name,
                 Price = detailViewModel.Price
-
             };
             service.Update(detailModel);
         }

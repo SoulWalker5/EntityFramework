@@ -21,7 +21,6 @@ namespace DataAccessLayer.Repository
 
         public IEnumerable<Detail> GetDetails()
         {
-            //var cars = _ctx.Cars.ToList();
             var details = _ctx.Details.ToList();
             return details;
         }

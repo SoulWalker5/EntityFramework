@@ -20,7 +20,6 @@ namespace BusinessLogicLayer.Services
                 CarId = detailModel.CarId,
                 Name = detailModel.Name,
                 Price = detailModel.Price
-
             };
             repository.Create(detail);
         }
@@ -32,14 +31,14 @@ namespace BusinessLogicLayer.Services
 
         public IEnumerable<DetailModel> GetDetails()
         {
-
             var detailsModels = repository.GetDetails().Select(x => new DetailModel
             {
                 Id = x.Id,
                 CarId = x.CarId,
                 Name = x.Name,
-                Price =x.Price
+                Price =x.Price,
             });
+
             return detailsModels;
         }
 
@@ -65,7 +64,6 @@ namespace BusinessLogicLayer.Services
                 CarId = detailModel.CarId,
                 Name = detailModel.Name,
                 Price = detailModel.Price
-
             };
             repository.Update(detail);
         }
