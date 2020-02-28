@@ -8,7 +8,7 @@ namespace DataAccessLayer.Interfaces
         Car GetById(int id);
         IEnumerable<Car> GetCars();
         void Create(Car car);
-        void Delete(Car car);
+        void Delete(int id);
         void Update(Car car);
     }
 }

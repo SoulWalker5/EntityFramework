@@ -8,7 +8,7 @@ namespace BusinessLogicLayer.Interfaces
         IEnumerable<DetailModel> GetDetails();
         void Create(DetailModel detail);
         void Update(DetailModel detail);
-        void Delete(DetailModel detail);
+        void Delete(int id);
         DetailModel GetById(int id);
     }
 }

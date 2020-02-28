@@ -9,6 +9,6 @@ namespace DataAccessLayer.Models
         public string Name { get; set; }
         public int Price { get; set; }
 
-        public Car Car { get; set; }
+        public virtual Car Car { get; set; }
     }
 }

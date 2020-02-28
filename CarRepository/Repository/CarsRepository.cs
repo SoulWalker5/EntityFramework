@@ -14,19 +14,20 @@ namespace DataAccessLayer.Repository
         {
             _ctx = new CarContext();
         }
-        public void Delete(Car car)
+        public void Delete(int id)
         {
+            Car car = new Car { Id = id };
             _ctx.Cars.Remove(car);
             _ctx.SaveChanges();
         }
 
         public IEnumerable<Car> GetCars()
         {
-            var details = _ctx.Details.Select(x => x).ToList();
-            var cars = _ctx.Cars.Select(x => x).ToList();
+            var cars = _ctx.Cars.ToList();
+            var details = cars.Select(x => x.Parts).ToList();
             return cars;
         }
-    
+
 
         public void Create(Car car)
         {
@@ -46,7 +47,7 @@ namespace DataAccessLayer.Repository
 
         public Car GetById(int id)
         {
-            var search =_ctx.Cars.Find(id);
+            var search = _ctx.Cars.Find(id);
             return search;
         }
     }

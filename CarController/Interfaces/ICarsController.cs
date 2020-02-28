@@ -7,7 +7,7 @@ namespace PresentationLayer.Interfaces
     {
         IEnumerable<CarViewModel> GetСars();
         void Create(CarViewModel carViewModel);
-        void Delete(CarViewModel carViewModel);
+        void Delete(int id);
         void Update(CarViewModel carViewModel);
         CarViewModel GetById(int id);
 

@@ -25,23 +25,21 @@ namespace BusinessLogicLayer.Services
             repository.Create(detail);
         }
 
-        public void Delete(DetailModel detailModel)
+        public void Delete(int id)
         {
-            Detail detail = new Detail
-            {
-                //Id = detailModel.Id,
-                CarId = detailModel.CarId,
-                Name = detailModel.Name,
-                Price = detailModel.Price
-
-            };
-            repository.Delete(detail);
+            repository.Delete(id);
         }
 
         public IEnumerable<DetailModel> GetDetails()
         {
 
-            var detailsModels = repository.GetDetails().Select(x => new DetailModel { Id = x.Id, CarId = x.CarId, Name = x.Name });
+            var detailsModels = repository.GetDetails().Select(x => new DetailModel
+            {
+                Id = x.Id,
+                CarId = x.CarId,
+                Name = x.Name,
+                Price =x.Price
+            });
             return detailsModels;
         }
 

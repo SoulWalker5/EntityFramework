@@ -9,6 +9,6 @@ namespace BusinessLogicLayer.Interfaces
         CarModel GetById(int id);
         void Create(CarModel car);
         void Update(CarModel car);
-        void Delete(CarModel car);
+        void Delete(int id);
     }
 }

@@ -11,26 +11,29 @@ namespace Lesson4_4
     {
         static void Main(string[] args)
         {
-            var carsController = new CarsController();
             var detailController = new DetailsController();
-            
-            var vehicles = carsController.GetСars();
+            var carsController = new CarsController();
+
             var det = detailController.GetDetails();
+            var vehicles = carsController.GetСars();
 
 
-            var carViewModel = new CarViewModel()
-            {
-                Id = 1,
-                Name = "Huyndai",
-                //Parts = new List<DetailViewModel> {
-                //new DetailViewModel()
-                //{
-                //    CarId = 3,
-                //    Name = "Seat",
-                //    Price = 400
-                //}}
-            };
-            carsController.Update(carViewModel);
+            
+            carsController.GetById(1);
+
+            //var carViewModel = new CarViewModel()
+            //{
+            //    Id = 1,
+            //    Name = "Huyndai",
+            //    //Parts = new List<DetailViewModel> {
+            //    //new DetailViewModel()
+            //    //{
+            //    //    CarId = 3,
+            //    //    Name = "Seat",
+            //    //    Price = 400
+            //    //}}
+            //};
+            //carsController.Update(carViewModel);
 
 
             //carsController.Create(carViewModel);
@@ -50,7 +53,6 @@ namespace Lesson4_4
             //    //}}
             //};
             //detailController.Create(detViewModel);
-
         }
     }
 }

@@ -12,16 +12,17 @@ namespace DataAccessLayer.Repository
         {
             _ctx = new CarContext();
         }
-        public void Delete(Detail detail)
+        public void Delete(int id)
         {
+            Detail detail = new Detail { Id = id };
             _ctx.Details.Remove(detail);
             _ctx.SaveChanges();
         }
 
         public IEnumerable<Detail> GetDetails()
         {
-            var cars = _ctx.Cars.Select(x => x).ToList();
-            var details = _ctx.Details.Select(x => x).ToList();
+            //var cars = _ctx.Cars.ToList();
+            var details = _ctx.Details.ToList();
             return details;
         }
 

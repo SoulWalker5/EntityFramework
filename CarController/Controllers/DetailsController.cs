@@ -16,31 +16,28 @@ namespace PresentationLayer.Controllers
         {
             DetailModel detailModel = new DetailModel
             {
-                //Id = detailViewModel.Id,
                 CarId = detailViewModel.CarId,
                 Name = detailViewModel.Name,
                 Price = detailViewModel.Price
-
             };
             service.Create(detailModel);
         }
 
-        public void Delete(DetailViewModel detailViewModel)
+        public void Delete(int id)
         {
-            DetailModel detail = new DetailModel
-            {
-                //Id = detailModel.Id,
-                Name = detailViewModel.Name,
-                Price = detailViewModel.Price,
-                CarId = detailViewModel.CarId
-            };
-            service.Delete(detail);
+            service.Delete(id);
         }
 
         public IEnumerable<DetailViewModel> GetDetails()
         {
 
-            var detailViewModel = service.GetDetails().Select(x => new DetailViewModel { Id = x.Id, CarId = x.CarId, Name = x.Name});
+            var detailViewModel = service.GetDetails().Select(x => new DetailViewModel
+            {
+                Id = x.Id,
+                CarId = x.CarId,
+                Name = x.Name,
+                Price = x.Price
+            });
 
             return detailViewModel;
         }
@@ -63,7 +60,7 @@ namespace PresentationLayer.Controllers
         {
             DetailModel detailModel = new DetailModel
             {
-                Id = detailViewModel.Id,
+                //Id = detailViewModel.Id,
                 CarId = detailViewModel.CarId,
                 Name = detailViewModel.Name,
                 Price = detailViewModel.Price
