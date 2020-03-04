@@ -16,7 +16,10 @@ namespace DataAccessLayer.Repository
         public ManufacturerRepository() => _ctx = new CarContext();
         public IEnumerable<Manufacturer> GetAll()
         {
-            var manufacturer = _ctx.Manufacturers.ToList();
+            var manufacturer = _ctx.Manufacturers
+                .Include(c => c.Cars)
+                .Include(c => c.Cars.Select(y => y.Parts))
+                .ToList();
             return manufacturer;
         }
     }

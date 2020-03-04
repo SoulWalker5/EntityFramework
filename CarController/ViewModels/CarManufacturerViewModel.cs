@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PresentationLayer.ViewModels
 {
-    public class CarByManufacturer
+    public class CarManufacturerViewModel
     {
         public ManufacturerViewModel Manufacturer { get; set; }
-        public int Price { get; set; }
+        public CarViewModel MostExpensiveCar { get; set; }
     }
 }

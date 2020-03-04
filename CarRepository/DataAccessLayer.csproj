@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarContext.cs" />
-    <Compile Include="Interface\ICarManufacturerRepository.cs" />
     <Compile Include="Interface\IManufacturerReposirory.cs" />
     <Compile Include="Migrations\202002281229297_InitialCreate.cs" />
     <Compile Include="Migrations\202002281229297_InitialCreate.designer.cs">

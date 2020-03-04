@@ -10,5 +10,7 @@ namespace BusinessLogicLayer.Interfaces
     public interface IManufacturerService
     {
         IEnumerable<ManufacturerModel> GetAll();
+
+        IEnumerable<CarManufacturerModel> GetCarManufacturerModels();
     }
 }

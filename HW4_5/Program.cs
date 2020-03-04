@@ -16,7 +16,6 @@ namespace Lesson4_4
             var detailController = new DetailsController();
             var carsController = new CarsController();
             var manufacturerController = new ManufacturerController();
-            var manufacturer = new CarManufacturerService();
 
             var det = detailController.GetDetails();
             var vehicles = carsController.GetСars();
@@ -25,27 +24,14 @@ namespace Lesson4_4
             {
                 Id = 6,
                 Name = "PAZIK",
-                //    Parts = new List<DetailViewModel> {
-                //    new DetailViewModel()
-                //    {
-                //        CarId = 6,
-                //        Name = "Wheel",
-                //        Price = 100
-                //    },
-                //    new DetailViewModel()
-                //    {
-                //        CarId = 6,
-                //        Name = "Seat",
-                //        Price = 100
-                //    }}
+
             };
-            //carsController.Create(carViewModel);
 
             var hz = detailController.GetDetails();
 
             var getmanufacturer = manufacturerController.GetAll();
 
-            var getall = manufacturer.GetCarManufacturerModels();
+            var getall = manufacturerController.GetCarManufacturerModels();
 
         }
     }

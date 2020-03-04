@@ -9,11 +9,11 @@ namespace PresentationLayer.Controllers
 {
     public class ManufacturerController : IManufacturerController
     {
-        IManufacturerService repository = new ManufacturerService();
+        IManufacturerService service = new ManufacturerService();
 
         public IEnumerable<ManufacturerViewModel> GetAll()
         {
-            var manufacturerViewModels = repository.GetAll().Select(x => new ManufacturerViewModel
+            var manufacturerViewModels = service.GetAll().Select(x => new ManufacturerViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -38,6 +38,25 @@ namespace PresentationLayer.Controllers
             }).ToList();
 
             return manufacturerViewModels;
+        }
+        public IEnumerable<CarManufacturerViewModel> GetCarManufacturerModels()
+        {
+            var allcarManufacturerModel = service.GetAll();
+
+            var carManufacturerModel = allcarManufacturerModel.Select(x => new CarManufacturerViewModel
+            {
+                Manufacturer = new ManufacturerViewModel
+                {
+                    Name = x.Name,
+                    Id = x.Id
+                },
+                MostExpensiveCar = x.Cars.OrderBy(y => y.Parts.Sum(c => c.Price)).Select(y => new CarViewModel
+                {
+                    Name = y.Name,
+                    Id = y.Id,
+                }).FirstOrDefault()
+            }).ToList();
+            return carManufacturerModel;
         }
     }
 }
