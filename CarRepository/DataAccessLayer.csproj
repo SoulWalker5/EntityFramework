@@ -8,7 +8,7 @@
     <ProjectGuid>{634205C5-8C05-40F2-AA68-F84C08839974}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarRepository</RootNamespace>
+    <RootNamespace>DataAccessLayer</RootNamespace>
     <AssemblyName>CarRepository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,18 +55,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarContext.cs" />
+    <Compile Include="Interface\ICarManufacturerRepository.cs" />
+    <Compile Include="Interface\IManufacturerReposirory.cs" />
     <Compile Include="Migrations\202002281229297_InitialCreate.cs" />
     <Compile Include="Migrations\202002281229297_InitialCreate.designer.cs">
       <DependentUpon>202002281229297_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003031212339_Manufacturer.cs" />
+    <Compile Include="Migrations\202003031212339_Manufacturer.designer.cs">
+      <DependentUpon>202003031212339_Manufacturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\DetType.cs" />
+    <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Repository\CarsRepository.cs" />
     <Compile Include="Models\Detail.cs" />
     <Compile Include="Repository\DetailsRepository.cs" />
     <Compile Include="Interface\ICarsRepository.cs" />
     <Compile Include="Interface\IDetailsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ManufacturerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,6 +84,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002281229297_InitialCreate.resx">
       <DependentUpon>202002281229297_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031212339_Manufacturer.resx">
+      <DependentUpon>202003031212339_Manufacturer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

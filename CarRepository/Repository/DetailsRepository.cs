@@ -14,7 +14,7 @@ namespace DataAccessLayer.Repository
         }
         public void Delete(int id)
         {
-            Detail detail = new Detail { Id = id };
+            var detail = _ctx.Details.FirstOrDefault(x => x.Id == id);
             _ctx.Details.Remove(detail);
             _ctx.SaveChanges();
         }

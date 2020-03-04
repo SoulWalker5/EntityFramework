@@ -6,6 +6,9 @@ namespace BusinessLogicLayer.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public ManufacturerModel Manufacturer { get; set; }
+
         public ICollection<DetailModel> Parts { get; set; }
     }
 }

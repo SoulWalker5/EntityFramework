@@ -6,8 +6,11 @@
         public int CarId { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
+        public int DetTypeId { get; set; }//new
 
-        //public CarModel Car { get; set; }
+        public ManufacturerModel Manufacturer { get; set; }//new
+
+        //public CarModel CarModel { get; set; }
 
 
     }

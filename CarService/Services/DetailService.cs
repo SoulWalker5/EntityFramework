@@ -37,6 +37,7 @@ namespace BusinessLogicLayer.Services
                 CarId = x.CarId,
                 Name = x.Name,
                 Price =x.Price,
+                DetTypeId = x.DetTypeId
             });
 
             return detailsModels;
@@ -51,7 +52,8 @@ namespace BusinessLogicLayer.Services
                 Id = detail.Id,
                 CarId = detail.CarId,
                 Name = detail.Name,
-                Price = detail.Price
+                Price = detail.Price,
+                DetTypeId = detail.DetTypeId
             };
             return detailModel;
         }

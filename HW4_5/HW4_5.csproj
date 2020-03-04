@@ -65,6 +65,10 @@
       <Project>{89F79F3E-F598-469D-AAA4-D50EA0176527}</Project>
       <Name>PresentationLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CarService\BusinessLogicLayer.csproj">
+      <Project>{3FB30575-8129-4EE5-9A52-0F8682EA9CDE}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

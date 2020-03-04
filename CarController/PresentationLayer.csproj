@@ -42,12 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\ManufacturerController.cs" />
+    <Compile Include="Interfaces\IManufacturerController.cs" />
+    <Compile Include="ViewModels\CarManufacturerViewModel.cs" />
     <Compile Include="ViewModels\CarViewModel.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="Interfaces\ICarsController.cs" />
     <Compile Include="Interfaces\IDetailsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ManufacturerViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

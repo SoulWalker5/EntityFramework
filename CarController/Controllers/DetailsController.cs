@@ -18,7 +18,8 @@ namespace PresentationLayer.Controllers
             {
                 CarId = detailViewModel.CarId,
                 Name = detailViewModel.Name,
-                Price = detailViewModel.Price
+                Price = detailViewModel.Price,
+                DetTypeId = detailViewModel.DetTypeId
             };
             service.Create(detailModel);
         }
@@ -36,7 +37,8 @@ namespace PresentationLayer.Controllers
                 Id = x.Id,
                 CarId = x.CarId,
                 Name = x.Name,
-                Price = x.Price
+                Price = x.Price,
+                DetTypeId = x.DetTypeId
             });
 
             return detailViewModel;
@@ -51,7 +53,8 @@ namespace PresentationLayer.Controllers
                 Id = detailModel.Id,
                 CarId = detailModel.CarId,
                 Name = detailModel.Name,
-                Price = detailModel.Price
+                Price = detailModel.Price,
+                DetTypeId = detailModel.DetTypeId
             };
             return detailViewModel;
         }

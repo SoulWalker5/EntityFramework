@@ -3,6 +3,7 @@ using BusinessLogicLayer.Models;
 using BusinessLogicLayer.Services;
 using PresentationLayer.Interfaces;
 using PresentationLayer.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,9 +15,15 @@ namespace PresentationLayer.Controllers
 
         public void Create(CarViewModel carViewModel)
         {
+            var isCarNameValid = IsCarNameValid(carViewModel.Name);
+
+            if (isCarNameValid == false)
+                throw new Exception("Your car name has more than 2 space correct this.");
+
             CarModel carModel = new CarModel
             {
-                Name = carViewModel.Name
+                Name = carViewModel.Name,
+                Parts = carViewModel.Parts.Select(x => new DetailModel { CarId = x.CarId, Name = x.Name, Price = x.Price }).ToList()
             };
             service.Create(carModel);
         }
@@ -58,7 +65,7 @@ namespace PresentationLayer.Controllers
                     Name = u.Name,
                     Price = u.Price
                 }).ToList()
-                });
+            });
             return carsViewModel;
         }
 
@@ -67,9 +74,27 @@ namespace PresentationLayer.Controllers
             CarModel carModel = new CarModel
             {
                 Id = carViewModel.Id,
-                Name = carViewModel.Name
+                Name = carViewModel.Name,
+                //Parts = carViewModel.Parts.Select(x => new DetailModel
+                //{
+                //    Name = x.Name,
+                //    Price = x.Price,
+                //    CarId = x.CarId
+                //}).ToList()
+
             };
             service.Update(carModel);
+        }
+
+        public bool IsCarNameValid(string carname)
+        {
+            string[] array;
+            string name = carname;
+            array = name.Split(' ');
+
+            if (array.Length > 2)
+                return false;
+            return true;
         }
     }
 }
